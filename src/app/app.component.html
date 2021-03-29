@@ -1,0 +1,76 @@
+<header>
+  <nav>
+    <mat-toolbar color="nav">
+      <img src="../assets/images/logo.png" alt="">
+    </mat-toolbar>
+  </nav>
+</header>
+<main>
+  <div class="line-text section-middle"></div>
+  <section class="grid-container">
+    <article>
+      <mat-card>
+        <mat-card-content>
+          <div class="text-center">
+            <h1 class="text-secondary m-0">Cotiza tu seguro automotriz</h1>
+            <h2 class="text-muted">¡Resultados Instantáneos!</h2>
+          </div>
+
+          <form [formGroup]="principalForm" (ngSubmit)="openDialog()">
+            <div class="grid-container-card">
+              <mat-form-field appearance="outline" class="mx-2">
+                <mat-label>Marca del auto</mat-label>
+                <mat-select formControlName="brand" name="brand" (selectionChange)="getModel($event.value)">
+                  <mat-option *ngFor="let brand of brands.brands" [value]="brand.id">
+                    {{brand.brand}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Debes elegir una marca</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="mx-2">
+                <mat-label>Modelo del auto</mat-label>
+                <mat-select formControlName="model" name="model">
+                  <mat-option *ngFor="let model of models[temporalID]" [value]="model.model">
+                    {{model.model}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Debes elegir un modelo</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="grid-container-card">
+              <mat-form-field appearance="outline" class="mx-2 year">
+                <mat-label>Año</mat-label>
+                <mat-select formControlName="year" name="year">
+                  <mat-option *ngFor="let year of models.years" [value]="year">
+                    {{year}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Elige un año</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="mx-2 email">
+                <mat-label>Correo electrónico</mat-label>
+                <input matInput formControlName="email" name="email" placeholder="Placeholder">
+                <mat-error>Debes agregar un correo electrónico</mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <input type="submit" [disabled]="principalForm.invalid" class="button" value="Cotizar">
+            </div>
+          </form>
+
+          <div class="text-center my-4">
+            <button class="button-link" (click)="getDataUser()">Recuperar cotización</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </article>
+    <article id="phrase" class="text-center margin-auto-grid text-white">
+        <h1 class="font-light">"El único que toma un riesgo con el seguro automotriz es aquel que no lo toma."</h1>
+        <h2 class="font-italic font-light m-0">Jose Marcos Ramirez Miguel</h2>
+        <small class="font-light">Director Grupo Banorte</small>
+    </article>
+  </section>
+</main>
+<footer class="text-white text-center">
+  <p>© Meridian Group - 2021</p>
+</footer>

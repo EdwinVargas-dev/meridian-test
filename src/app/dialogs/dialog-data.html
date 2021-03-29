@@ -1,0 +1,57 @@
+<h1 mat-dialog-title class="font-light">Resultado de la cotización</h1>
+<mat-dialog-content>
+  <div *ngIf="data">
+    <h3 class="text-primary">Datos de tu cotización</h3>
+    <div class="grid-container-dialog">
+      <div class="mx-10">
+        <small class="m-0 text-muted">Marca del vehiculo</small>
+        <h3>{{data.brandName}}</h3>
+      </div>
+      <div class="mx-10">
+        <small class="m-0 text-muted">Modelo del vehiculo</small>
+        <h3>{{data.model}}</h3>
+      </div>
+      <div class="mx-10">
+        <small class="m-0 text-muted">Año</small>
+        <h3>{{data.year}}</h3>
+      </div>
+      <div class="mx-10">
+        <small class="m-0 text-muted">Correo de contacto</small>
+        <h3>{{data.email}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-primary">Resultado de tu cotización</h3>
+    <div class="grid-container-dialog">
+      <div class="mx-10">
+        <small class="m-0 text-muted">Valor de pago inicial</small>
+        <h2>$1.325.810</h2>
+      </div>
+      <div class="mx-10">
+        <small class="m-0 text-muted">Valor de pago mensual*</small>
+        <h2>$255.632 (x10)</h2>
+      </div>
+      <div class="mx-10">
+        <small class="m-0 text-muted">Cubrimiento</small>
+        <h2>95%</h2>
+      </div>
+      <div class="mx-10">
+        <small class="m-0 text-muted">Tipo de seguro</small>
+        <h2>Todo riesgo</h2>
+      </div>
+    </div>
+    <div class="text-center">
+      <small class="m-0 text-muted">Total Valor seguro:</small>
+      <h1 class="text-primary">$16.486.258</h1>
+    </div>
+    <div class="text-center d-grid">
+      <small class="text-muted">*Valor de la cuota mensual por la cantidad de meses a pagar.</small>
+      <small class="text-muted">*Al enviar la cotización estas aceptando nuestro tratamiento de datos.</small>
+    </div>
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions class="text-center mt-5">
+  <button mat-button (click)="close()" class="button-min">Enviar cotización</button>
+</div>

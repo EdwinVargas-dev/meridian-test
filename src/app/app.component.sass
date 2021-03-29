@@ -1,0 +1,233 @@
+// COLORS
+$primary-color: #fc9404
+$secondary-color: #05ace4
+$nav-color: #444444
+$white-color: #fff
+$gray-color: #aeadad
+
+// COLOR SCHEMAS
+.mat-toolbar.mat-primary
+  background: $primary-color
+  color: $white-color
+
+.mat-toolbar.mat-secondary
+  background: $secondary-color
+  color: $white-color
+
+.text-primary
+  color: $primary-color
+
+.text-muted
+  color: $gray-color
+
+.text-secondary
+  color: $secondary-color
+
+.text-white
+  color: $white-color
+
+// BASIC STRUCTURE
+
+.line-text
+  width: 100%
+  height: 40%
+  position: absolute
+  background-color: rgba(252,148,4,0.7)
+  left: 0
+  top: 50%
+  backdrop-filter: blur(5px)
+
+.margin-auto-grid
+  margin: auto 10%
+
+.mat-toolbar.mat-nav
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,0.42) 66%, rgba(255,255,255,0) 96%)
+  color: $white-color
+  min-height: 100px
+
+// INPUTS
+.button
+  width: 100%
+  height: 50px
+  border: none
+  background-color: $secondary-color
+  color: $white-color
+  cursor: pointer
+  font-size: 1.3em
+
+.button-min
+  padding: 0 30px
+  height: 35px
+  border: none
+  background-color: $secondary-color
+  color: $white-color
+  cursor: pointer
+  font-size: 1.2em
+
+input[type="submit" i]:disabled
+  background-color: lighten($secondary-color, 30)
+  color: $white-color
+
+.button-link
+  border: none
+  background: none
+  color: $secondary-color
+  cursor: pointer
+
+// UTILITIES
+.text-center
+  text-align: center !important
+
+.mx-2
+  margin: 0 5px
+
+.my-4
+  margin: 15px 0
+
+.mt-5
+  margin-top: 20px
+
+.mx-10
+  margin: 0 20px
+
+.m-0
+  margin: 0
+
+.font-light
+  font-weight: lighter
+
+.font-bold
+  font-weight: bold
+
+.font-italic
+  font-style: italic
+
+.d-grid
+  display: grid
+
+// RESPONSIVE
+
+@media screen and (min-width: 300px) and (max-width: 767px)
+  // PHRASE SECTION
+  #phrase
+    display: none
+
+  // BASIC STRUCTURE
+  section
+    top: 25%
+    left: 0%
+    padding: 0 10px
+
+  .section-middle
+    top: 50%
+    left: 0%
+    padding: 0
+
+  .grid-container
+    display: grid
+    grid-template-columns: auto
+
+  .grid-container-card
+    display: grid
+    grid-template-columns: auto
+
+  .grid-container-dialog
+    display: grid
+    grid-template-columns: auto
+
+  img
+    width: 50%
+
+  .year
+    max-width: 100%
+
+  .email
+    width: auto
+
+  main
+    min-height: 85vh
+
+  .mat-card
+    padding: 20px 30px
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  // PHRASE SECTION
+  #phrase
+    display: none
+
+  // BASIC STRUCTURE
+  section
+    top: 25%
+    left: 0%
+    padding: 5% 10%
+
+  .section-middle
+    top: 40%
+    left: 0%
+    padding: 0
+
+  .grid-container
+    display: grid
+    grid-template-columns: auto
+
+  .grid-container-card
+    display: grid
+    grid-template-columns: auto auto
+
+  .grid-container-dialog
+    display: grid
+    grid-template-columns: auto auto
+
+  img
+    width: 30%
+
+  .year
+    max-width: 100%
+
+  .email
+    width: auto
+
+  main
+    min-height: 85vh
+
+  .mat-card
+    width: auto
+
+@media screen and (min-width: 992px) and (max-width: 1366px)
+  // PHRASE SECTION
+  #phrase
+    visibility: visible
+
+  // BASIC STRUCTURE
+  section, .section-middle
+    position: fixed
+    top: 25%
+    left: 10%
+
+  .grid-container
+    display: grid
+    grid-template-columns: auto auto
+
+  .grid-container-dialog
+    display: grid
+    grid-template-columns: auto auto auto auto
+
+  img
+    width: 20%
+
+  .line-text
+    position: absolute
+    left: 0
+    top: 32%
+
+  .year
+    max-width: 25%
+
+  .email
+    width: 70%
+
+  main
+    min-height: 77vh
+
+  .mat-card
+    padding: 20px 30px
